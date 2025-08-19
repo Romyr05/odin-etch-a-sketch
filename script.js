@@ -13,9 +13,17 @@ function add_grid(size){
         cell.style.width = `${cell_size}px`
         cell.style.height = `${cell_size}px`
         cell.style.borderWidth = "1px"
+ 
+        cell.addEventListener(("mouseenter"), () => {
+            cell.style.backgroundColor = "red"
+        })
         container.appendChild(cell)
     }
+
+
 }
+
+
 
 add_grid(size)
 
