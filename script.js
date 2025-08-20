@@ -6,10 +6,8 @@ const size = 2;
 
 function add_grid(size) {
 
-    const container_size = Math.min(container.offsetWidth, container.offsetHeight);
-    const cell_size = Math.floor(container_size / size) - 2; 
+    const cell_size = Math.floor(960 / size) - 2; 
 
-    console.log(container_size)
     console.log(cell_size)
 
     for (let i = 0; i < size * size; i++) {
@@ -43,15 +41,26 @@ function add_grid(size) {
 
 }
 
-const new_size = new_grid.addEventListener(("click"), () => {
-    const sizing = prompt("Enter new size")
+function add_new_grid(){
+    const new_size = new_grid.addEventListener(("click"), () => {
+        const sizing = prompt("Enter new size")
 
-    container.innerHTML = ""
+        if(sizing > 100){
+            alert("only 100 below")
+            return
+        }else if(sizing < 1){
+            alert("from 1 to 100 only")
+            return
+        }
 
-    add_grid(sizing)
-})
+        container.innerHTML = ""
+
+        add_grid(sizing)
+    })
+}
 
 add_grid(size)
+add_new_grid()
 
 
 
