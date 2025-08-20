@@ -24,7 +24,6 @@ body{
 
 .cells{
     cursor: pointer;
-    box-sizing: border-box;
 }
 
 .cells:hover{
