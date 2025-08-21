@@ -46,7 +46,7 @@ function new_grid(){
     newGrid.addEventListener(("click"), () => {
         const new_size = prompt("Enter the new size of the grid")
 
-        if(new_size > 100 || new_size < 1 || !Number.isInteger(new_size)){
+        if(new_size > 100 && new_size < 1 && !Number.isInteger(new_size)){
             alert("Try Again 1 to 100 only")
             return
         }
