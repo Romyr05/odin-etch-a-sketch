@@ -18,16 +18,23 @@ function add_grid(size){
         cell.style.height = `${cell_size}px`
         cell.style.border = "solid"
         cell.style.borderWidth = "1px"
+        
+        const colorList = [
+            '#FFF0F5', '#FFB6C1', '#FFC0CB', '#FF99AA', '#FF69B4',
+            '#FF1493', '#FF007F', '#E0115F', '#C71585', '#8B008B'
+        ];
 
+        //Another way of coloring
         const firstRGB = Math.floor(Math.random()*256)
         const secondRGB = Math.floor(Math.random() * 256)
         const thirdRGB = Math.floor(Math.random() *256)
 
 
-        let opacity_cell = 0
+        let listing = 0
 
         cell.addEventListener(("mouseenter"), (event) => {
-            cell.style.backgroundColor = `rgba(${firstRGB},${secondRGB},${thirdRGB}, ${opacity_cell += 0.1})`
+            cell.style.backgroundColor = `${colorList[listing]}`
+            listing++
         })
         container.append(cell)
     }
@@ -38,6 +45,11 @@ function add_grid(size){
 function new_grid(){
     newGrid.addEventListener(("click"), () => {
         const new_size = prompt("Enter the new size of the grid")
+
+        if(new_size > 100 || new_size < 1 || !Number.isInteger(new_size)){
+            alert("Try Again 1 to 100 only")
+            return
+        }
 
         container.innerHTML = ""
 
