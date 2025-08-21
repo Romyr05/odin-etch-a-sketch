@@ -34,6 +34,7 @@ function add_grid(size){
 
 }
 
+//Adding a new_grid 
 function new_grid(){
     newGrid.addEventListener(("click"), () => {
         const new_size = prompt("Enter the new size of the grid")
