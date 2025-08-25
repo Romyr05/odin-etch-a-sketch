@@ -3,7 +3,7 @@
 Etch-A-Sketch is an interactive sketch pad that darkens when the mouse enters a square.  
 Each cell gradually fills with color, becoming darker the more times you hover over it.
 
-[Try It Here!](https://your-live-demo-link.com)
+[Try It Here!](https://romyr05.github.io/odin-etch-a-sketch/)
 
 ---
 
